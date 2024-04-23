@@ -15,11 +15,11 @@ unsafe extern "C" fn master_sound_win1(agent: &mut L2CAgentBase) {
         if macros::is_excute(agent) {
             macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win01_01"));
         }
-    }
     frame(agent.lua_state_agent, 41.0);
     if macros::is_excute(agent) {
         macros::PLAY_SE_NO_3D(agent, Hash40::new("vc_master_win01"));
         }
+    }
     else {
         frame(agent.lua_state_agent, 20.0);
         if macros::is_excute(agent) {
