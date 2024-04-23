@@ -17,7 +17,7 @@ mod win1;
 mod win2;
 mod win3;
 
-#[skyline::main(name = "byleth_victoryfix_SL2")]
+#[skyline::main(name = "byleth_victoryfix_SL2_personal")]
 pub fn main() {
     win1::install();
     win2::install();

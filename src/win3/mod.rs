@@ -10,19 +10,43 @@ use {
 };
 
 unsafe extern "C" fn master_sound_win3(agent: &mut L2CAgentBase) {
-    if WorkModule::get_int(agent.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_COLOR) % 2 == 0 {
-        frame(agent.lua_state_agent, 52.0);
+    let x = WorkModule::get_int(agent.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_COLOR);
+    if x == 16
+    || x == 18
+    || x == 20
+    || x == 22
+    || x == 30
+    || x == 32{
+        frame(agent.lua_state_agent, 10.0);
         if macros::is_excute(agent) {
-            macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win03_01"));
+            macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win03_02"));
         }
-    frame(agent.lua_state_agent, 59.0);
-    if macros::is_excute(agent) {
-        macros::PLAY_SE_NO_3D(agent, Hash40::new("vc_master_win03"));
+        frame(agent.lua_state_agent, 57.0);
+        if macros::is_excute(agent) {
+            macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win01_03"));
+        }
+        frame(agent.lua_state_agent, 59.0);
+        if macros::is_excute(agent) {
+            macros::PLAY_SE_NO_3D(agent, Hash40::new("vc_master_win03"));
+        }
+        frame(agent.lua_state_agent, 98.0);
+        if macros::is_excute(agent) {
+            macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win02_03"));
     }
-    frame(agent.lua_state_agent, 160.0);
+} 
+ else if WorkModule::get_int(agent.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_COLOR) % 2 == 0{
+    frame(agent.lua_state_agent, 52.0);
     if macros::is_excute(agent) {
-        macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win03_02"));
+        macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win03_01"));
     }
+frame(agent.lua_state_agent, 59.0);
+if macros::is_excute(agent) {
+    macros::PLAY_SE_NO_3D(agent, Hash40::new("vc_master_win03"));
+}
+frame(agent.lua_state_agent, 160.0);
+if macros::is_excute(agent) {
+    macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win03_02"));
+}
 }
     else {
         frame(agent.lua_state_agent, 10.0);
